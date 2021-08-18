@@ -1,12 +1,19 @@
-// 모든 dom event 리슨
-// https://stackoverflow.com/questions/27321672/listen-for-all-events-in-javascript/27322253
-
-
-// SDK 실행시 도메인 등록
-// window.onload 함수 사용
 window.onload = () => {
+  // SDK 실행시 도메인 등록
   const domain = window.location.host;
+  console.log(domain);
   // TODO API 연결
+
+
+  // 모든 dom event 리슨
+  // https://stackoverflow.com/questions/27321672/listen-for-all-events-in-javascript/27322253
+  Object.keys(window).forEach(key => {
+    if(/./.test(key)){
+        window.addEventListener(key.slice(2), event => {
+            console.log(key, event)
+        })
+    }
+  });
 };
 
 

@@ -38,7 +38,17 @@ captureMessage('Hello, world!');
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
 - [Contributing](https://github.com/tophat-cloud/tophat-cumulus-sdk/blob/main/CONTRIBUTING.md)
 
+
 ## Author
-```
-todo
-```
+<p align="center">
+  <p align="center">
+    <a href="https://github.com/tophat-cloud" target="_blank">
+      <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/tophat.png" alt="TopHat" height="100">
+    </a>
+  </p>
+
+  <p align="center">
+    <a href="http://github.com/tinyjin" target="_blank">@Jinny You</a>&nbsp from <strong>TopHat</strong>
+  </p>
+</p>
+

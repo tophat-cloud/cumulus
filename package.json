@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tophat-cloud/tophat-cumulus-sdk.git"
+    "url": "git+https://github.com/tophat-cloud/cumulus.git"
   },
   "browserslist": {
     "production": [

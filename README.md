@@ -35,7 +35,7 @@ captureMessage('Hello, world!');
 ```
 
 ## Contents
-- [Cumulus Dashboard](https://cumulus.tophat.cloud/)
+- [Cumulus Dashboard](https://cumulus.tophat.cloud)
 - [Contributing](https://github.com/tophat-cloud/cumulus/blob/main/CONTRIBUTING.md)
 
 

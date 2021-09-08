@@ -35,7 +35,8 @@ window.onload = () => {
             var data = new FormData();
             data.append('project', _projectKey);
             data.append('thunder_name', 'xss');
-            data.append('url', 'http://blog.plura.io/?p=7614');
+            data.append('url', window.location.href);
+            data.append('rel_link', 'http://blog.plura.io/?p=7614');
             data.append('priority', '1');
 
             var config = {

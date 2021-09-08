@@ -1,7 +1,7 @@
 <p align="center">
   <p align="center">
     <a href="https://cumulus.tophat.cloud" target="_blank">
-      <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/logo.png" alt="" height="72">
+      <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/logo.png" alt="Cumulus" height="72">
     </a>
   </p>
   <p align="center">
@@ -36,7 +36,7 @@ captureMessage('Hello, world!');
 
 ## Contents
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
-- [Contributing]()
+- [Contributing](https://github.com/tophat-cloud/tophat-cumulus-sdk/blob/main/CONTRIBUTING.md)
 
 ## Author
 ```

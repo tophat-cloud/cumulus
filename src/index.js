@@ -1,4 +1,6 @@
 const axios = require('axios');
+let _projectKey = '';
+let isProtect = false;
 
 window.onload = () => {
   // SDK 실행시 도메인 등록
@@ -6,6 +8,9 @@ window.onload = () => {
   console.log(domain);
   // TODO API 연결
 
+  if (!projectKey) {
+      throw 'No project key';
+  }
 
   // 모든 dom event 리슨
   // https://stackoverflow.com/questions/27321672/listen-for-all-events-in-javascript/27322253
@@ -27,7 +32,7 @@ window.onload = () => {
             var axios = require('axios');
             var FormData = require('form-data');
             var data = new FormData();
-            data.append('project', 'KMsB9W4hZCejJ6D1fiESP');
+            data.append('project', projectKey);
             data.append('thunder_name', 'xss');
             data.append('url', 'http://blog.plura.io/?p=7614');
             data.append('priority', '1');
@@ -124,6 +129,12 @@ window.onload = () => {
 };
 
 
+const protect = (projectKey) => {
+    console.log('start protect with cumulus');
+    _projectKey = projectKey;
+    isProtect = true;
+};
+
 // http reqeust 가로채기
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Intercept_HTTP_requests
 
@@ -138,3 +149,5 @@ window.onload = () => {
 - 우선순위 (priority)
 - 코멘트 (comment)
 */
+
+module.exports = protect;

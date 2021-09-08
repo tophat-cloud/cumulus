@@ -1,4 +1,6 @@
 const axios = require('axios');
+var FormData = require('form-data');
+
 let _projectKey = '';
 let isProtect = false;
 
@@ -29,8 +31,7 @@ window.onload = () => {
 
         if (xssRegx.test(value)) {
             console.log('deteted');
-            var axios = require('axios');
-            var FormData = require('form-data');
+
             var data = new FormData();
             data.append('project', projectKey);
             data.append('thunder_name', 'xss');
@@ -120,7 +121,7 @@ window.onload = () => {
   interceptNetworkRequests({
       onFetch: console.log,
       onFetchResponse: console.log,
-      onFetchLoad: console.log,    
+      onFetchLoad: console.log,
       onOpen: console.log,
       onSend: console.log,
       onError: console.log,

@@ -41,10 +41,10 @@ window.onload = () => {
             var config = {
                 method: 'post',
                 url: 'https://api.cumulus.tophat.cloud/thunder/create',
-                headers: { 
-                    ...data.getHeaders()
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded',
                 },
-                data : data
+                data : data,
             };
 
             axios(config)

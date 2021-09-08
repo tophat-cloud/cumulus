@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 window.onload = () => {
   // SDK 실행시 도메인 등록
   const domain = window.location.host;
@@ -21,7 +23,31 @@ window.onload = () => {
         const xssRegx = /<|>|&lt;|&gt;|&amp;|&quot;|&apos;/;
 
         if (xssRegx.test(value)) {
+            console.log('deteted');
+            var axios = require('axios');
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('project', 'KMsB9W4hZCejJ6D1fiESP');
+            data.append('thunder_name', 'xss');
+            data.append('url', 'http://blog.plura.io/?p=7614');
+            data.append('priority', '1');
 
+            var config = {
+            method: 'post',
+            url: 'https://api.cumulus.tophat.cloud/thunder/create',
+            headers: { 
+                ...data.getHeaders()
+            },
+            data : data
+            };
+
+            axios(config)
+            .then(function (response) {
+            console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+            console.log(error);
+            });
         }
     });
   });

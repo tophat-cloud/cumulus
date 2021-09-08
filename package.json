@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/tophat-cloud/tophat-culumus-sdk/issues"
   },
-  "homepage": "https://github.com/tophat-cloud/tophat-culumus-sdk#readme"
+  "homepage": "https://github.com/tophat-cloud/tophat-culumus-sdk#readme",
+  "dependencies": {
+    "axios": "^0.21.4"
+  }
 }

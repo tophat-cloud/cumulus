@@ -1,15 +1,15 @@
 {
-  "name": "culumus",
+  "name": "cumulus",
   "version": "1.0.0",
   "private": true,
-  "description": "culumus web SDK",
+  "description": "cumulus web SDK",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tophat-cloud/tophat-culumus-sdk.git"
+    "url": "git+https://github.com/tophat-cloud/tophat-cumulus-sdk.git"
   },
   "browserslist": {
     "production": [
@@ -38,9 +38,9 @@
   "author": "tophat",
   "license": "BSL",
   "bugs": {
-    "url": "https://github.com/tophat-cloud/tophat-culumus-sdk/issues"
+    "url": "https://github.com/tophat-cloud/tophat-cumulus-sdk/issues"
   },
-  "homepage": "https://github.com/tophat-cloud/tophat-culumus-sdk#readme",
+  "homepage": "https://github.com/tophat-cloud/tophat-cumulus-sdk#readme",
   "dependencies": {
     "axios": "^0.21.4"
   }

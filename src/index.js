@@ -130,9 +130,9 @@ window.onload = () => {
 };
 
 
-const protect = ({ projectKey }) => {
+const protect = ({ key }) => {
     console.log('start protect with cumulus');
-    _projectKey = projectKey;
+    _projectKey = key;
     isProtect = true;
 };
 

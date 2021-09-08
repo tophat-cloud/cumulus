@@ -9,8 +9,8 @@
 # Contributing
 
 Welcome and Thanks your suggestion! we ready for accept grateful idea.
-Just throw your idea in the form of pull requests on [GitHub](https://github.com/tophat-cloud/tophat-culumus-sdk).
-Let's contribute and be a culumus family!
+Just throw your idea in the form of pull requests on [GitHub](https://github.com/tophat-cloud/tophat-cumulus-sdk).
+Let's contribute and be a cumulus family!
 
 
 ## Environment

@@ -10,7 +10,7 @@ window.onload = () => {
   console.log(domain);
   // TODO API 연결
 
-  if (!projectKey) {
+  if (!_projectKey) {
       throw 'No project key';
   }
 
@@ -33,7 +33,7 @@ window.onload = () => {
             console.log('deteted');
 
             var data = new FormData();
-            data.append('project', projectKey);
+            data.append('project', _projectKey);
             data.append('thunder_name', 'xss');
             data.append('url', 'http://blog.plura.io/?p=7614');
             data.append('priority', '1');

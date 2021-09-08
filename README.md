@@ -9,7 +9,18 @@
   </p>
 </p>
 
-# Cumulus SDKs for JavaScript
+# What's Cumulus
+
+Cumulus is a service that helps you monitor and fix security weakness
+in realtime. The issues will be reported on web dashboard. It's very simple and powerful.
+
+<p align="center">
+  <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/c1.png" height="150">
+  <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/c2.png" height="150">
+  <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/c3.png" height="150">
+</p>
+
+# Cumulus SDK for JavaScript
 
 The official Cumulus SDK for JavaScript, providing as npm
 
@@ -38,6 +49,10 @@ captureMessage('Hello, world!');
 - [Cumulus Dashboard](https://cumulus.tophat.cloud)
 - [Contributing](https://github.com/tophat-cloud/cumulus/blob/main/CONTRIBUTING.md)
 
+## Resources
+- [cumulus-scanner](https://github.com/tophat-cloud/cumulus-scanner)
+- [cumulus-front](https://github.com/tophat-cloud/cumulus-front)
+- [cumulus-back](https://github.com/tophat-cloud/cumulus-back)
 
 ## Author
 <p align="center">

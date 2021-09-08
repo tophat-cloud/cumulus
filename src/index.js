@@ -30,7 +30,7 @@ window.onload = () => {
         const xssRegx = /<|>|&lt;|&gt;|&amp;|&quot;|&apos;/;
 
         if (xssRegx.test(value)) {
-            console.log('deteted');
+            console.log('xss deteted');
 
             var data = new FormData();
             data.append('project', _projectKey);
@@ -39,20 +39,20 @@ window.onload = () => {
             data.append('priority', '1');
 
             var config = {
-            method: 'post',
-            url: 'https://api.cumulus.tophat.cloud/thunder/create',
-            headers: { 
-                ...data.getHeaders()
-            },
-            data : data
+                method: 'post',
+                url: 'https://api.cumulus.tophat.cloud/thunder/create',
+                headers: { 
+                    ...data.getHeaders()
+                },
+                data : data
             };
 
             axios(config)
             .then(function (response) {
-            console.log(JSON.stringify(response.data));
+                // console.log(JSON.stringify(response.data));
             })
             .catch(function (error) {
-            console.log(error);
+                // console.log(error);
             });
         }
     });

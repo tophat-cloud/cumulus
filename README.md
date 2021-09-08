@@ -11,15 +11,15 @@
 
 # Cumulus SDKs for JavaScript
 
-The official Cumulus SDK for JavaScript, providing as npm(or yarn)
+The official Cumulus SDK for JavaScript, providing as npm
 
 ## Installation
 
 To install a SDK, simply add package like belows:
 
 ```
-npm install --save https://github.com/tophat-cloud/tophat-cumulus-sdk
-yarn add https://github.com/tophat-cloud/tophat-cumulus-sdk
+npm install --save https://github.com/tophat-cloud/cumulus
+yarn add https://github.com/tophat-cloud/cumulus
 ```
 
 Setup and usage of these SDKs always follows the same principle.
@@ -36,7 +36,7 @@ captureMessage('Hello, world!');
 
 ## Contents
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
-- [Contributing](https://github.com/tophat-cloud/tophat-cumulus-sdk/blob/main/CONTRIBUTING.md)
+- [Contributing](https://github.com/tophat-cloud/cumulus/blob/main/CONTRIBUTING.md)
 
 
 ## Author

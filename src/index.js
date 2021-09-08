@@ -129,7 +129,7 @@ window.onload = () => {
 };
 
 
-const protect = (projectKey) => {
+const protect = ({ projectKey }) => {
     console.log('start protect with cumulus');
     _projectKey = projectKey;
     isProtect = true;
@@ -150,4 +150,4 @@ const protect = (projectKey) => {
 - 코멘트 (comment)
 */
 
-module.exports = protect;
+module.exports = { protect };

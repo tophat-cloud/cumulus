@@ -30,14 +30,6 @@ window.onload = () => {
     onLoad: console.log,
   });
 
-  Object.keys(window).forEach(key => {
-    if(/./.test(key)){
-        window.addEventListener(key.slice(2), event => {
-            // console.log(key, event);
-        })
-    }
-  });
-
   document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', function (e) {
         const value = e.target.value;

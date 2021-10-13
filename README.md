@@ -9,6 +9,11 @@
   </p>
 </p>
 
+![Build & Test](https://github.com/getsentry/sentry-javascript/workflows/Build%20&%20Test/badge.svg)
+[![codecov](https://codecov.io/gh/tophat-cloud/cumulus/branch/main/graph/badge.svg)](https://codecov.io/gh/tophat-cloud/cumulus)
+[![npm version](https://img.shields.io/npm/v/0.svg)](https://www.npmjs.com/)
+
+
 # What's Cumulus
 
 Cumulus is a service that helps you monitor and fix security weakness

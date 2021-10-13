@@ -1,5 +1,7 @@
 const Api = require('./networks/api');
 const Xss = require('./weakness/xss');
+const SqlInjection = require('./weakness/sqlinjection');
+
 const domLogger = require('./utils/loggers/dom');
 const requestLogger = require('./utils/loggers/request');
 const domInterceptor = require('./utils/interceptors/dom');
@@ -34,15 +36,25 @@ window.onload = () => {
   domInterceptor.interceptInputEvent(
     function (e) {
       const value = e.target.value;
-      const isDetected = Xss.checkString(value);
 
-      if (isDetected) {
+      if (Xss.checkString(value)) {
         console.log('xss deteted');
 
         api.createThunder(
           'xss',
           window.location.href,
           'http://blog.plura.io/?p=7614',
+          '1',
+        );
+      }
+
+      if (SqlInjection.checkString(value)) {
+        console.log('sqlinjection deteted');
+
+        api.createThunder(
+          'sqlinjection',
+          window.location.href,
+          'https://portswigger.net/web-security/sql-injection',
           '1',
         );
       }

@@ -57,4 +57,12 @@ const protect = ({ key }) => {
   isProtect = true;
 };
 
-module.exports = { protect };
+const captureMessage = (msg) => {
+  // TODO caputre API -> to dashboard
+  console.log(msg);
+};
+
+module.exports = {
+  protect,
+  captureMessage,
+};

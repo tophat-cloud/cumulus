@@ -1,5 +1,4 @@
-const axios = require('axios');
-var FormData = require('form-data');
+const Api = require('./networks/api');
 
 let _projectKey = '';
 let isProtect = false;
@@ -7,12 +6,13 @@ let isProtect = false;
 window.onload = () => {
   // SDK 실행시 도메인 등록
   const domain = window.location.host;
-  console.log(domain);
   // TODO API 연결
 
   if (!_projectKey) {
-      throw 'No project key';
+    throw 'No project key';
   }
+
+  const api = new Api(_projectKey);
 
   // 모든 dom event 리슨
   // https://stackoverflow.com/questions/27321672/listen-for-all-events-in-javascript/27322253
@@ -32,29 +32,12 @@ window.onload = () => {
         if (xssRegx.test(value)) {
             console.log('xss deteted');
 
-            var data = new FormData();
-            data.append('project', _projectKey);
-            data.append('thunder_name', 'xss');
-            data.append('url', window.location.href);
-            data.append('rel_link', 'http://blog.plura.io/?p=7614');
-            data.append('priority', '1');
-
-            var config = {
-                method: 'post',
-                url: 'https://api.cumulus.tophat.cloud/thunder/create',
-                headers: {
-                    'content-type': 'application/x-www-form-urlencoded',
-                },
-                data : data,
-            };
-
-            axios(config)
-            .then(function (response) {
-                // console.log(JSON.stringify(response.data));
-            })
-            .catch(function (error) {
-                // console.log(error);
-            });
+            api.createThunder(
+                'xss',
+                window.location.href,
+                'http://blog.plura.io/?p=7614',
+                '1',
+            );
         }
     });
   });

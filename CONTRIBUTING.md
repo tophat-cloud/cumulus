@@ -36,19 +36,31 @@ yarn add https://github.com/path/to/repo
 ```
 
 ## Adding Tests
-```
-todo
-```
+
+Any nontrivial fixes/features should include tests. we have a test folder.
+
+You can write test code, about weakness logic is in `weakness.test.js`, the others are in `core.test.js`, also can suggest new kind of test code. please reference [./test](https://github.com/tophat-cloud/cumulus/tree/main/test).
+
 
 ## Running Tests
+
+Running tests works:
+
 ```
-todo
+yarn test
 ```
 
+Note: can triggering to test for only `*.test.js`.
+
 ## Linting
+
+Linting whole codes:
+
 ```
-todo
+yarn lint
 ```
+
+Note: we adopt [eslint](https://eslint.org/) for javascript linting.
 
 ## Considerations Before Sending Your First PR
 When contributing to the codebase, please note:

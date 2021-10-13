@@ -1,5 +1,5 @@
-const Xss = require('./weakness/xss');
-const SqlInjection = require('./weakness/sqlinjection');
+const Xss = require('../src/weakness/xss');
+const SqlInjection = require('../src/weakness/sqlinjection');
 
 describe('xss test', () => {
   it('detect case', (done) => {

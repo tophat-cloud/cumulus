@@ -5,7 +5,7 @@
   "description": "cumulus web SDK",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest ./test.js",
+    "test": "jest ./test/*.js",
     "lint": "eslint ."
   },
   "repository": {

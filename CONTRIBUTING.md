@@ -35,12 +35,33 @@ npm install https://github.com/path/to/repo
 yarn add https://github.com/path/to/repo
 ```
 
-## Considerations Before Sending Your First PR
+## Adding Tests
 ```
 todo
 ```
 
-## Publishing a Release
+## Running Tests
 ```
 todo
 ```
+
+## Linting
+```
+todo
+```
+
+## Considerations Before Sending Your First PR
+When contributing to the codebase, please note:
+
+- Non-trivial PRs will not be accepted without tests (see above).
+- Please do not bump version numbers yourself.
+
+
+## Publishing a Release
+These steps are only relevant to Sentry employees when preparing and publishing a new SDK release.
+
+1. Determine what version will be released (we use [semver](https://semver.org/)).
+2. Update CHANGELOG.md to add an entry for the next release number and a list of 3. changes since the last release.
+4. Run the Prepare Release workflow.
+5. A new issue should appear in https://github.com/tophat-cloud/cumulus/issues.
+6. Ask a member of the [@tophat-cloud](https://github.com/tophat-cloud) team to approve the release.

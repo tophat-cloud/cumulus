@@ -5,7 +5,7 @@
   "description": "cumulus web SDK",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ./test.js",
     "lint": "eslint ."
   },
   "repository": {
@@ -46,6 +46,7 @@
     "axios": "^0.21.4"
   },
   "devDependencies": {
-    "eslint": "^8.0.0"
+    "eslint": "^8.0.0",
+    "jest": "^27.2.5"
   }
 }

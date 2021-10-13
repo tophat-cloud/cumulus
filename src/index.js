@@ -2,19 +2,20 @@ const Api = require('./networks/api');
 const Xss = require('./weakness/xss');
 const domLogger = require('./utils/loggers/dom');
 const requestLogger = require('./utils/loggers/request');
+const domInterceptor = require('./utils/interceptors/dom');
 
-let _projectKey = '';
+let projectKey = '';
 let isProtect = false;
 
 window.onload = () => {
   const domain = window.location.host;
   // TODO API 연결 - SDK 실행시 도메인 등록
 
-  if (!_projectKey) {
+  if (!projectKey) {
     throw 'No project key';
   }
 
-  const api = new Api(_projectKey);
+  const api = new Api(projectKey);
 
   domLogger.enableLogger((key, event) => {
     console.log(key, event);
@@ -30,30 +31,30 @@ window.onload = () => {
     onLoad: console.log,
   });
 
-  document.querySelectorAll('input').forEach(input => {
-    input.addEventListener('input', function (e) {
-        const value = e.target.value;
-        const isDetected = Xss.checkString(value);
+  domInterceptor.interceptInputEvent(
+    function (e) {
+      const value = e.target.value;
+      const isDetected = Xss.checkString(value);
 
-        if (isDetected) {
-            console.log('xss deteted');
+      if (isDetected) {
+        console.log('xss deteted');
 
-            api.createThunder(
-                'xss',
-                window.location.href,
-                'http://blog.plura.io/?p=7614',
-                '1',
-            );
-        }
-    });
-  });
+        api.createThunder(
+          'xss',
+          window.location.href,
+          'http://blog.plura.io/?p=7614',
+          '1',
+        );
+      }
+    }
+  );
 };
 
 
 const protect = ({ key }) => {
-    console.log('start protect with cumulus');
-    _projectKey = key;
-    isProtect = true;
+  console.log('start protect with cumulus');
+  projectKey = key;
+  isProtect = true;
 };
 
 module.exports = { protect };

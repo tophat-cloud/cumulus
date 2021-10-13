@@ -1,16 +1,16 @@
 {
   "name": "cumulus",
-  "version": "1.0.0",
-  "private": true,
-  "description": "cumulus web SDK",
+  "version": "0.0.2",
+  "author": "TopHat",
+  "license": "BSD-3-Clause",
+  "description": "The official Cumulus SDK for JavaScript, providing as npm",
+  "repository": "git://github.com/tophat-cloud/cumulus.git",
+  "bugs": "https://github.com/tophat-cloud/cumulus/issues",
+  "homepage": "https://cumulus.tophat.cloud",
   "main": "src/index.js",
   "scripts": {
     "test": "jest ./test/*.js",
     "lint": "eslint ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tophat-cloud/cumulus.git"
   },
   "browserslist": {
     "production": [
@@ -35,13 +35,6 @@
       "current node"
     ]
   },
-  "keywords": [],
-  "author": "tophat",
-  "license": "BSL",
-  "bugs": {
-    "url": "https://github.com/tophat-cloud/tophat-cumulus-sdk/issues"
-  },
-  "homepage": "https://github.com/tophat-cloud/tophat-cumulus-sdk#readme",
   "dependencies": {
     "axios": "^0.21.4"
   },

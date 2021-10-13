@@ -7,10 +7,9 @@ const requestLogger = require('./utils/loggers/request');
 const domInterceptor = require('./utils/interceptors/dom');
 
 let projectKey = '';
-let isProtect = false;
 
 window.onload = () => {
-  const domain = window.location.host;
+  // const domain = window.location.host;
   // TODO API 연결 - SDK 실행시 도메인 등록
 
   if (!projectKey) {
@@ -66,7 +65,6 @@ window.onload = () => {
 const protect = ({ key }) => {
   console.log('start protect with cumulus');
   projectKey = key;
-  isProtect = true;
 };
 
 const captureMessage = (msg) => {

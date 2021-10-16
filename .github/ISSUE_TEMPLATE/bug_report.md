@@ -9,10 +9,10 @@ assignees: ''
 
 <!-- Requirements: please go through this checklist before opening a new issue -->
 
-- [ ] Review the documentation: https://docs.sentry.io/
-- [ ] Search for existing issues: https://github.com/getsentry/sentry-javascript/issues
-- [ ] Use the latest release: https://github.com/getsentry/sentry-javascript/releases
-- [ ] Provide a link to the affected event from your Sentry account
+- [ ] Review the documentation: https://cumulus.tophat.cloud/dashboard/documents
+- [ ] Search for existing issues: https://github.com/tophat-cloud/cumulus/issues
+- [ ] Use the latest release: https://github.com/tophat-cloud/cumulus/releases
+- [ ] Provide a link to the affected event from your Cumulus account
 
 ## Type + Version
 

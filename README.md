@@ -9,7 +9,7 @@
   </p>
 </p>
 
-![Build & Test](https://github.com/getsentry/sentry-javascript/workflows/Build%20&%20Test/badge.svg)
+![Build & Test](https://github.com/tophat-cloud/cumulus/actions/workflows/main.yml/badge.svg)
 [![codecov](https://codecov.io/gh/tophat-cloud/cumulus/branch/main/graph/badge.svg?token=HDT8UJHMNN)](https://codecov.io/gh/tophat-cloud/cumulus)
 [![npm version](https://img.shields.io/npm/v/0.svg)](https://www.npmjs.com/)
 [![Discord](https://img.shields.io/discord/898906919878668299)](https://discord.gg/BH7h6F2C7N)

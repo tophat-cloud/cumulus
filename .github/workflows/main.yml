@@ -1,4 +1,4 @@
-name: deploy cumulus-sdk
+name: Build & Test
 on:
   push:
     branches:
@@ -14,3 +14,5 @@ jobs:
         run: yarn lint
       - name: Run Jest
         run: yarn test
+      - name: Run Codecov
+        run: yarn test-codecov

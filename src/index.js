@@ -2,6 +2,7 @@ const Api = require('./networks/api');
 const Xss = require('./weakness/xss');
 const SqlInjection = require('./weakness/sqlinjection');
 const FileUpload = require('./weakness/fileupload');
+const Sensitive = require('./weakness/sensitive');
 
 // const domLogger = require('./utils/loggers/dom');
 // const requestLogger = require('./utils/loggers/request');
@@ -84,7 +85,7 @@ window.onload = () => {
   requestInterceptor.interceptRequest(
     function (data) {
       const body = data[0].body;
-      if ('password' in Object.keys(body)) {
+      if (Sensitive.checkJSON(body)) {
         console.log('sensitive detected');
 
         api.createThunder(
@@ -100,7 +101,7 @@ window.onload = () => {
   requestInterceptor.interceptResponse(
     function (data) {
       const body = data .body;
-      if ('password' in Object.keys(body)) {
+      if (Sensitive.checkJSON(body)) {
         console.log('sensitive detected');
 
         api.createThunder(

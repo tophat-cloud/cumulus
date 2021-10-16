@@ -3,8 +3,8 @@ const Xss = require('./weakness/xss');
 const SqlInjection = require('./weakness/sqlinjection');
 const FileUpload = require('./weakness/fileupload');
 
-const domLogger = require('./utils/loggers/dom');
-const requestLogger = require('./utils/loggers/request');
+// const domLogger = require('./utils/loggers/dom');
+// const requestLogger = require('./utils/loggers/request');
 const domInterceptor = require('./utils/interceptors/dom');
 const requestInterceptor = require('./utils/interceptors/request');
 

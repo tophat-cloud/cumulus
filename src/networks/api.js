@@ -12,7 +12,7 @@ class Api {
     data.append('project_id', this.projectKey);
     data.append('domain', domain);
 
-    axios.post('/project/enroll', data, {
+    axios.patch('/project/enroll', data, {
       headers: {
         'content-type': 'application/x-www-form-urlencoded',
       }

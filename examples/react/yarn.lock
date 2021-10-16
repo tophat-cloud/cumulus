@@ -3832,7 +3832,7 @@ cssstyle@^2.3.0:
 
 "cumulus@https://github.com/tophat-cloud/cumulus":
   version "0.0.2"
-  resolved "https://github.com/tophat-cloud/cumulus#2ce52a6c862aeb8846769de80b8ec7f0c6eb5d43"
+  resolved "https://github.com/tophat-cloud/cumulus#547ef67f31613e69827afc5bda7c2d38f2ee9388"
   dependencies:
     axios "^0.21.4"
 

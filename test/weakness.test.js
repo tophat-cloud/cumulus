@@ -1,5 +1,7 @@
 const Xss = require('../src/weakness/xss');
 const SqlInjection = require('../src/weakness/sqlinjection');
+const Sensitive = require('../src/weakness/sensitive');
+const Fileupload = require('../src/weakness/fileupload');
 
 describe('xss test', () => {
   it('detect case', (done) => {
@@ -30,3 +32,22 @@ describe('sqlinjection test', () => {
   });
 });
 
+
+describe('sensitive test', () => {
+  it('detect case', (done) => {
+    const isDetected = Sensitive.checkJSON({ password: '12345678' });
+    expect(isDetected).toBeTruthy();
+    done();
+  });
+
+  it('undetect case', (done) => {
+    const isDetected = Sensitive.checkJSON({ name: 'jinny you' });
+    expect(isDetected).not.toBeTruthy();
+    done();
+  });
+});
+
+
+describe('fileupload test', () => {
+  
+});

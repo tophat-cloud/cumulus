@@ -1,6 +1,6 @@
 class Sensitive {
   checkJSON(data) {
-    return 'password' in Object.keys(data);
+    return Object.keys(data).includes('password');
   }
 }
 

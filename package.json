@@ -10,6 +10,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest ./test/*.js",
+    "test-codecov": "jest --ci --coverage && codecov",
     "lint": "eslint ."
   },
   "browserslist": {
@@ -39,6 +40,7 @@
     "axios": "^0.21.4"
   },
   "devDependencies": {
+    "codecov": "^3.8.3",
     "eslint": "^8.0.0",
     "jest": "^27.2.5"
   }

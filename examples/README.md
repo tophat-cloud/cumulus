@@ -4,5 +4,5 @@
 
 - [x] React (via npm)
 - [x] Vue (via npm)
-- [ ] Angular (via npm)
+- [x] Angular (via npm)
 - [ ] VanillaJS (via CDN)

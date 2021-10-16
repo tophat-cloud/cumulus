@@ -1,4 +1,4 @@
-# Cumulus use example for 펻
+# Cumulus use example for Vue
 
 ```shell
 npm install

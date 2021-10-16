@@ -11,14 +11,14 @@ const requestInterceptor = require('./utils/interceptors/request');
 let projectKey = '';
 
 window.onload = () => {
-  // const domain = window.location.host;
-  // TODO API 연결 - SDK 실행시 도메인 등록
+  const domain = window.location.host;
 
   if (!projectKey) {
     throw 'No project key';
   }
 
   const api = new Api(projectKey);
+  api.registerKey(domain);
 
   domLogger.enableLogger((key, event) => {
     console.log(key, event);

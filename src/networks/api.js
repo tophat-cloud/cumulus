@@ -7,6 +7,18 @@ class Api {
     axios.defaults.baseURL = 'https://api.cumulus.tophat.cloud';
   }
 
+  async registerKey(domain) {
+    const data = new FormData();
+    data.append('project_id', this.projectKey);
+    data.append('domain', domain);
+
+    axios.post('/project/enroll', data, {
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+      }
+    });
+  }
+
   async createThunder(name, url, link, priority) {
     const data = new FormData();
     data.append('project', this.projectKey);

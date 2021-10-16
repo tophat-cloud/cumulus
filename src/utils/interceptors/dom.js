@@ -12,4 +12,11 @@ module.exports = {
       });
     });
   },
+  interceptFileEvent: (callback) => {
+    document.querySelectorAll('input[type="file"]').forEach(input => {
+      input.addEventListener('change', function (e) {
+        callback(e);
+      });
+    });
+  },
 };

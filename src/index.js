@@ -1,6 +1,7 @@
 const Api = require('./networks/api');
 const Xss = require('./weakness/xss');
 const SqlInjection = require('./weakness/sqlinjection');
+const FileUpload = require('./weakness/fileupload');
 
 const domLogger = require('./utils/loggers/dom');
 const requestLogger = require('./utils/loggers/request');
@@ -59,6 +60,25 @@ window.onload = () => {
       }
     }
   );
+
+  domInterceptor.interceptFileEvent(
+    function (e) {
+      const value = e.target.files;
+
+      for (const file of value) {
+        if (FileUpload.checkBinary(file)) {
+          console.log('fileupload deteted');
+
+          api.createThunder(
+            'fileupload',
+            window.location.href,
+            'https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload',
+            '1',
+          );
+        }
+      }
+    }
+  )
 };
 
 

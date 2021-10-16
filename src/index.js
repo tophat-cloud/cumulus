@@ -6,6 +6,7 @@ const FileUpload = require('./weakness/fileupload');
 const domLogger = require('./utils/loggers/dom');
 const requestLogger = require('./utils/loggers/request');
 const domInterceptor = require('./utils/interceptors/dom');
+const requestInterceptor = require('./utils/interceptors/request');
 
 let projectKey = '';
 
@@ -78,7 +79,39 @@ window.onload = () => {
         }
       }
     }
-  )
+  );
+
+  requestInterceptor.interceptRequest(
+    function (data) {
+      const body = data[0].body;
+      if ('password' in Object.keys(body)) {
+        console.log('sensitive detected');
+
+        api.createThunder(
+          'sensitive payload',
+          window.location.href,
+          'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
+          '1',
+        );
+      }
+    }
+  );
+
+  requestInterceptor.interceptResponse(
+    function (data) {
+      const body = data .body;
+      if ('password' in Object.keys(body)) {
+        console.log('sensitive detected');
+
+        api.createThunder(
+          'sensitive payload',
+          window.location.href,
+          'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
+          '1',
+        );
+      }
+    }
+  );
 };
 
 

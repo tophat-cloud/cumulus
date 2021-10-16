@@ -56,6 +56,7 @@ captureMessage('Hello, world!');
 - [Cumulus Dashboard](https://cumulus.tophat.cloud)
 - [Contributing](https://github.com/tophat-cloud/cumulus/blob/main/CONTRIBUTING.md)
 - [Change log](https://github.com/tophat-cloud/cumulus/blob/main/CHANGELOG.md)
+- [Opensource License](https://cumulus.tophat.cloud/license.html)
 
 ## Resources
 - [cumulus-scanner](https://github.com/tophat-cloud/cumulus-scanner)

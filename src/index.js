@@ -20,19 +20,19 @@ window.onload = () => {
   const api = new Api(projectKey);
   api.registerKey(domain);
 
-  domLogger.enableLogger((key, event) => {
-    console.log(key, event);
-  });
+  // domLogger.enableLogger((key, event) => {
+  //   console.log(key, event);
+  // });
 
-  requestLogger.enableLogger({
-    onFetch: console.log,
-    onFetchResponse: console.log,
-    onFetchLoad: console.log,
-    onOpen: console.log,
-    onSend: console.log,
-    onError: console.log,
-    onLoad: console.log,
-  });
+  // requestLogger.enableLogger({
+  //   onFetch: console.log,
+  //   onFetchResponse: console.log,
+  //   onFetchLoad: console.log,
+  //   onOpen: console.log,
+  //   onSend: console.log,
+  //   onError: console.log,
+  //   onLoad: console.log,
+  // });
 
   domInterceptor.interceptInputEvent(
     function (e) {

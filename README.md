@@ -27,6 +27,26 @@ in realtime. The issues will be reported on web dashboard. It's very simple and 
   <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/c3.png" height="150">
 </p>
 
+# Key features
+Just install SDK to web front, can be found security weakness on service
+
+- SDK detect weakness from Inner Layer, dinamically (ex_ DOM Event, XHR Request)
+- Scanner detect weakness from Out Layer, statically (ex_ Crawl of web resources and analysis that)
+
+
+| Name | Origin | Description |
+| ---- | ---- | ---- |
+| XSS | SDK | When user input a xss pattern string, trigger detection of XSS
+| SQLInjection | SDK | When user input a sqlinjection pattern, trigger detection of SQLInjection
+| Sensitive Payload | SDK | When requesting with sensitive payload. for example, unencoded raw password
+| File Upload | SDK | When user embed any file worried for system. for example, web shell
+| Unnecessary Comment | Scanner | Code comments are on the served HTML or JS
+| Directory Traversal | Scanner | Detect directory listing vulnerability
+| Guessing | Scanner | Detect sensitive page like admin
+| Unobfuscated Code | Scanner | Detect unobfuscated vulnerable codes
+
+If you think about able to detect additional weakness, please contribute on SDK or Scanner
+
 # Cumulus SDK for JavaScript
 
 The official Cumulus SDK for JavaScript, providing as npm

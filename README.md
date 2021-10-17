@@ -60,7 +60,7 @@ npm install --save https://github.com/tophat-cloud/cumulus
 yarn add https://github.com/tophat-cloud/cumulus
 ```
 
-Setup and usage of these SDKs always follows the same principle.
+Setup and usage of SDK always follow the same principle.
 
 ```javascript
 import { protect } from 'cumulus';

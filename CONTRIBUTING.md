@@ -35,12 +35,56 @@ npm install https://github.com/path/to/repo
 yarn add https://github.com/path/to/repo
 ```
 
+## Adding New Weakness
+If you found new weakness logic then add file to `./src/weakness/{name}.js`
+
+- each files on weakness directory are for finding each weakness.
+- also the file name will be report type name on cumulus service.
+
+For a case study, when you want to writing a logic about CSRF, create `csrf.js`:
+```javascript
+class CSRF { // set class name as upper camel case
+  checkString(data) {
+    let isDetected = false;
+
+    // TODO something to write for detection logic
+
+    return isDetected; // must to be return boolean type
+  }
+}
+
+module.exports = new CSRF();
+```
+
+## Improve Exsited Weakness
+If you want to contribute to exsited weakness logic, you can touch on middle of weakness class code:
+```javascript
+class Xss {
+  checkString(data) {
+    let isDetected = false;
+    
+    const regExp = /<|>|&lt;|&gt;|&amp;|&quot;|&apos;/;
+    isDetected = regExp.test(data);
+
+    // TODO something to write for improve logic
+
+    return isDetected;
+  }
+
+  // NOTE or you can add new function like `checkType(data)`
+}
+
+module.exports = new Xss();
+```
+
+
 ## Adding Tests
 
 Any nontrivial fixes/features should include tests. we have a test folder.
 
 You can write test code, about weakness logic is in `weakness.test.js`, the others are in `core.test.js`, also can suggest new kind of test code. please reference [./test](https://github.com/tophat-cloud/cumulus/tree/main/test).
 
+Don't forget to add test code when you add new logic for weakness!
 
 ## Running Tests
 
@@ -62,11 +106,24 @@ yarn lint
 
 Note: we adopt [eslint](https://eslint.org/) for javascript linting.
 
-## Considerations Before Sending Your First PR
+## Considerations Before Sending PR
 When contributing to the codebase, please note:
 
 - Non-trivial PRs will not be accepted without tests (see above).
 - Please do not bump version numbers yourself.
+- Please use [template](https://github.com/tophat-cloud/cumulus/blob/main/.github/ISSUE_TEMPLATE/bug_report.md) as much as possible
+
+
+## Found an Issue?
+If you have found a bug then raise an issue on the cumulus repo: https://github.com/tophat-cloud/cumulus/issues
+
+Its worth checking to see if its already been reported, and including as much information as you can to help us diagnose your problem.
+
+
+## Got a Question or Problem?
+If you have a question or problem relating to using Cumulus then you can contact to [Email](mailto:team@tophat.cloud).
+
+Or please visit user group on [Discord](https://discord.gg/BH7h6F2C7N)
 
 
 ## Publishing a Release

@@ -63,7 +63,7 @@ yarn add https://github.com/tophat-cloud/cumulus
 Setup and usage of SDK always follow the same principle.
 
 ```javascript
-import { protect } from 'cumulus';
+import { protect, captureMessage } from 'cumulus';
 
 protect({
   key: '__key__',

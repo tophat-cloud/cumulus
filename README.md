@@ -51,6 +51,8 @@ If you think about able to detect additional weakness, please contribute on SDK 
 
 The official Cumulus SDK for JavaScript, providing as npm
 
+> Note: current version is unsupported version on typescript project but we considering now and gonna make it, quickly! ([#2](https://github.com/tophat-cloud/cumulus/issues/2))
+
 ## Installation
 
 To install a SDK, simply add package like belows:
@@ -72,11 +74,14 @@ protect({
 captureMessage('Hello, world!');
 ```
 
+> If you haven't `__key__`, please [sign-up](https://cumulus.tophat.cloud/signup) and create project to get to key
+
 ## Contents
-- [Cumulus Dashboard](https://cumulus.tophat.cloud)
+- [Official Site](https://cumulus.tophat.cloud)
 - [Contributing](https://github.com/tophat-cloud/cumulus/blob/main/CONTRIBUTING.md)
 - [Change log](https://github.com/tophat-cloud/cumulus/blob/main/CHANGELOG.md)
-- [Opensource License](https://cumulus.tophat.cloud/license.html)
+- [OpenSource License](https://cumulus.tophat.cloud/license.html)
+- [Documents](https://github.com/tophat-cloud/cumulus/wiki)
 
 ## Resources
 - [cumulus-scanner](https://github.com/tophat-cloud/cumulus-scanner)

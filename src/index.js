@@ -40,24 +40,32 @@ window.onload = () => {
       const value = e.target.value;
 
       if (Xss.checkString(value)) {
-        console.log('xss deteted');
+        // console.log('xss deteted');
 
         api.createThunder(
-          'xss',
+          'XSS',
           window.location.href,
-          'http://blog.plura.io/?p=7614',
           '1',
+          JSON.stringify({
+            description: 'Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the output it generates without validating or encoding it.',
+            suggestion: 'Filter input on arrival - At the point where user input is received, filter as strictly as possible based on what is expected or valid input.',
+            reference: 'https://portswigger.net/web-security/cross-site-scripting',
+          }),
         );
       }
 
       if (SqlInjection.checkString(value)) {
-        console.log('sqlinjection deteted');
+        // console.log('sqlinjection deteted');
 
         api.createThunder(
-          'sqlinjection',
+          'SQLInjection',
           window.location.href,
-          'https://portswigger.net/web-security/sql-injection',
           '1',
+          JSON.stringify({
+            description: `In this section, we'll explain what SQL injection is, describe some common examples, explain how to find and exploit various kinds of SQL injection vulnerabilities, and summarize how to prevent SQL injection.`,
+            suggestion: `Most instances of SQL injection can be prevented by using parameterized queries (also known as prepared statements) instead of string concatenation within the query.`,
+            reference: 'https://portswigger.net/web-security/sql-injection',
+          }),
         );
       }
     }
@@ -69,13 +77,17 @@ window.onload = () => {
 
       for (const file of value) {
         if (FileUpload.checkBinary(file)) {
-          console.log('fileupload deteted');
+          // console.log('fileupload deteted');
 
           api.createThunder(
-            'fileupload',
+            'File Upload',
             window.location.href,
-            'https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload',
-            '1',
+            '2',
+            JSON.stringify({
+              description: `File upload is becoming a more and more essential part of any application, where the user is able to upload their photo, their CV, or a video showcasing a project they are working on. The application should be able to fend off bogus and malicious files in a way to keep the application and the users safe.`,
+              suggestion: `Finding missed extensions that can be executed on the server side or can be dangerous on the client side (e.g. “.php5”, “.pht”, “.phtml”, “.shtml”, “.asa”, “.cer”, “.asax”, “.swf”, or “.xap”).`,
+              reference: 'https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload',
+            }),
           );
         }
       }
@@ -86,13 +98,17 @@ window.onload = () => {
     function (data) {
       const body = data[0].body;
       if (Sensitive.checkJSON(body)) {
-        console.log('sensitive detected');
+        // console.log('sensitive detected');
 
         api.createThunder(
-          'sensitive payload',
+          'Sensitive Payload',
           window.location.href,
-          'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
-          '1',
+          '2',
+          JSON.stringify({
+            description: `When you send sensitive data as request payload, It's triggering. for example, send password via non-SSL`,
+            suggestion: `Sensitive information must be encrypted during transmission over networks that are easily accessed by malicious individuals. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targets of malicious individuals who exploit these vulnerabilities to gain privileged access to cardholder data environments`,
+            reference: 'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
+          }),
         );
       }
     }
@@ -102,13 +118,17 @@ window.onload = () => {
     function (data) {
       const body = data .body;
       if (Sensitive.checkJSON(body)) {
-        console.log('sensitive detected');
+        // console.log('sensitive detected');
 
         api.createThunder(
-          'sensitive payload',
+          'Sensitive Payload',
           window.location.href,
-          'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
-          '1',
+          '2',
+          JSON.stringify({
+            description: `When you send sensitive data as request payload, It's triggering. for example, send password via non-SSL`,
+            suggestion: `Sensitive information must be encrypted during transmission over networks that are easily accessed by malicious individuals. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targets of malicious individuals who exploit these vulnerabilities to gain privileged access to cardholder data environments`,
+            reference: 'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
+          }),
         );
       }
     }

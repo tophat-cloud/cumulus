@@ -35,12 +35,36 @@ describe('sqlinjection test', () => {
 
 describe('sensitive test', () => {
   it('detect case', (done) => {
+    window = {
+      location: {
+        protocol: 'http:'
+      }
+    };
+
     const isDetected = Sensitive.checkJSON({ password: '12345678' });
     expect(isDetected).toBeTruthy();
     done();
   });
 
-  it('undetect case', (done) => {
+  it('undetect case 1', (done) => {
+    window = {
+      location: {
+        protocol: 'https:'
+      }
+    };
+
+    const isDetected = Sensitive.checkJSON({ password: '00000000' });
+    expect(isDetected).not.toBeTruthy();
+    done();
+  });
+
+  it('undetect case 2', (done) => {
+    window = {
+      location: {
+        protocol: 'http:'
+      }
+    };
+
     const isDetected = Sensitive.checkJSON({ name: 'jinny you' });
     expect(isDetected).not.toBeTruthy();
     done();
@@ -49,5 +73,5 @@ describe('sensitive test', () => {
 
 
 describe('fileupload test', () => {
-  
+  // todo write test-code
 });

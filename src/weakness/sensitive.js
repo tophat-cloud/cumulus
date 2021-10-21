@@ -1,6 +1,13 @@
 class Sensitive {
   checkJSON(data) {
-    return Object.keys(data).includes('password');
+    const hasPassword = Object.keys(data).includes('password');
+    const isSSL = window.location.protocol === 'https:';
+
+    if (!hasPassword) {
+      return false;
+    }
+
+    return !isSSL;
   }
 }
 

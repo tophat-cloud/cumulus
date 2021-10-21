@@ -106,6 +106,12 @@ yarn lint
 
 Note: we adopt [eslint](https://eslint.org/) for javascript linting.
 
+
+## Versioning & Branch
+- We adopt [semver](https://semver.org) as versioning.
+- We adopt Git Flow branch strategy.
+
+
 ## Considerations Before Sending PR
 When contributing to the codebase, please note:
 

@@ -3,7 +3,7 @@ import App from './App.vue'
 import { protect } from 'cumulus'
 
 protect({
-  key: 'KMsB9W4hZCejJ6D1fiESP',
+  key: 'Bs0hLQqej0b0IwPVg06Po',
 })
 
 createApp(App).mount('#app')

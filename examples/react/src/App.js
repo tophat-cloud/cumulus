@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { protect } from 'cumulus';
 
 protect({
-  key: 'FrTSnNkBLizMWQtoy2f9z',
+  key: 'rwS5MzP0Ig_hpfWqyAre8',
 });
 
 function App() {

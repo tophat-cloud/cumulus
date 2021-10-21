@@ -8,7 +8,7 @@ import { environment } from './environments/environment';
 import { protect } from 'cumulus';
 
 protect({
-  key: 'KMsB9W4hZCejJ6D1fiESP',
+  key: 'G0HTxSUKH5ZQhVg2DLNQW',
 });
 
 if (environment.production) {

@@ -19,12 +19,11 @@ class Api {
     });
   }
 
-  async createThunder(name, url, link, priority, details) {
+  async createThunder(name, url, priority, details) {
     const data = new FormData();
     data.append('project', this.projectKey);
     data.append('thunder_name', name);
     data.append('url', url);
-    data.append('rel_link', link);
     data.append('priority', priority);
     data.append('details', details);
 

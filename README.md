@@ -82,6 +82,7 @@ captureMessage('Hello, world!');
 - [Change log](https://github.com/tophat-cloud/cumulus/blob/main/CHANGELOG.md)
 - [OpenSource License](https://cumulus.tophat.cloud/license.html)
 - [Documents](https://github.com/tophat-cloud/cumulus/wiki)
+- [Roadmap](https://github.com/tophat-cloud/cumulus/projects/1)
 
 ## Resources
 - [cumulus-scanner](https://github.com/tophat-cloud/cumulus-scanner)

@@ -125,7 +125,7 @@ window.onload = async () => {
 
   requestInterceptor.interceptResponse(
     function (data) {
-      const body = data .body;
+      const body = data.body;
       if (Sensitive.checkJSON(body)) {
         // console.log('sensitive detected');
 

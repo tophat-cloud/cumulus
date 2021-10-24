@@ -104,35 +104,9 @@ window.onload = async () => {
   );
 
   requestInterceptor.interceptRequest(
-    function (data) {
-      const body = data[1].body;
+    function (body) {
       if (!body) {
         // NOTE: req body unavailable case
-        return;
-      }
-
-      if (Sensitive.checkJSON(body)) {
-        // console.log('sensitive detected');
-
-        api.createThunder(
-          'Sensitive Payload',
-          window.location.href,
-          '2',
-          JSON.stringify({
-            description: `When you send sensitive data as request payload, It's triggering. for example, send password via non-SSL`,
-            suggestion: `Sensitive information must be encrypted during transmission over networks that are easily accessed by malicious individuals. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targets of malicious individuals who exploit these vulnerabilities to gain privileged access to cardholder data environments`,
-            reference: 'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
-          }),
-        );
-      }
-    }
-  );
-
-  requestInterceptor.interceptResponse(
-    function (data) {
-      const body = data.body;
-      if (!body) {
-        // NOTE: res body unavailable case
         return;
       }
 

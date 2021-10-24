@@ -12,7 +12,7 @@ module.exports = {
           try {
             callback(e);
           } catch (err) {
-
+            // TODO raise error to maintainer
           }
         }, 500);
       });
@@ -28,7 +28,7 @@ module.exports = {
           try {
             callback(e);
           } catch (err) {
-
+            // TODO raise error to maintainer
           }
         }, 500);
       });
@@ -40,7 +40,7 @@ module.exports = {
         try {
           callback(e);
         } catch (err) {
-          
+          // TODO raise error to maintainer
         }
       });
     });

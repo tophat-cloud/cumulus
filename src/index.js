@@ -105,7 +105,12 @@ window.onload = async () => {
 
   requestInterceptor.interceptRequest(
     function (data) {
-      const body = data[0].body;
+      const body = data[1].body;
+      if (!body) {
+        // NOTE: req body unavailable case
+        return;
+      }
+
       if (Sensitive.checkJSON(body)) {
         // console.log('sensitive detected');
 
@@ -126,6 +131,11 @@ window.onload = async () => {
   requestInterceptor.interceptResponse(
     function (data) {
       const body = data.body;
+      if (!body) {
+        // NOTE: res body unavailable case
+        return;
+      }
+
       if (Sensitive.checkJSON(body)) {
         // console.log('sensitive detected');
 

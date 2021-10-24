@@ -56,12 +56,24 @@ function interceptNetworkRequests(ee) {
 module.exports = {
   interceptRequest: (callback) => {
     interceptNetworkRequests({
-      onFetch: callback,
+      onFetch: (data) => {
+        try {
+          callback(data);
+        } catch (e) {
+          
+        }
+      },
     });
   },
   interceptResponse: (callback) => {
     interceptNetworkRequests({
-      onFetch: callback,
+      onFetch: (data) => {
+        try {
+          callback(data);
+        } catch (e) {
+
+        }
+      },
     });
   },
 };

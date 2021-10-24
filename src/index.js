@@ -10,6 +10,7 @@ const domInterceptor = require('./utils/interceptors/dom');
 const requestInterceptor = require('./utils/interceptors/request');
 
 let projectKey = '';
+let isLoading = true;
 let isAPIError = false;
 
 window.onload = async () => {
@@ -19,16 +20,21 @@ window.onload = async () => {
     return;
   }
 
+
   let api;
+  isLoading = true;
+
   try {
     api = new Api(projectKey);
     await api.registerKey(domain);
   } catch (e) {
     isAPIError = true;
+    isLoading = false;
     return;
   }
 
   isAPIError = false;
+  isLoading = false;
 
   // domLogger.enableLogger((key, event) => {
   //   console.log(key, event);
@@ -141,6 +147,11 @@ const protect = ({ key }) => {
 const captureMessage = (msg) => {
   if (!projectKey) {
     console.error(`[cumulus] couldn't start - please register projectKey with call protect function.`);
+    return;
+  }
+
+  if (isLoading) {
+    console.warn(`[cumulus] too fast call - checking project key, please call captureMessage at little later moment.`);
     return;
   }
 

@@ -1,6 +1,9 @@
 ## 0.0.2
-- [weakness] ✨ Add sqlinjection detection
-- [core] ♻️ Refactor to networks, interceptors, loggers, weakness
+- [weakness] ✨ Add SQLInjection detection
+- [weakness] ✨ Add File Upload Attack detection
+- [core] 🥅  Catch many of unexpected errors
+- [core] 🔧 Apply linting, test codes
+- [core] ♻️ Refactor to whole codes as modularization
 
 ## 0.0.1
 - [core] 🎉 Release first version

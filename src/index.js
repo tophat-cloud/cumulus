@@ -145,7 +145,7 @@ window.onload = async () => {
 
 
 const protect = ({ key }) => {
-  if (!projectKey) {
+  if (!key) {
     console.warn(`[cumulus] can't find project key!`);
     return;
   }

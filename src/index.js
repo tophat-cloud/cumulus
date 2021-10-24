@@ -158,6 +158,11 @@ const captureMessage = (msg) => {
     console.error(`[cumulus] couldn't start - please register projectKey with call protect function.`);
     return;
   }
+
+  if (isAPIError) {
+    console.error(`[cumulus] couldn't start - please check your projectKey is valid.`);
+    return;
+  }
   
   console.log(`[cumulus] ${msg}`);
 };

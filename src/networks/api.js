@@ -12,10 +12,10 @@ class Api {
     data.append('project_id', this.projectKey);
     data.append('domain', domain);
 
-    axios.patch('/project/enroll', data, {
+    await axios.patch('/project/enroll', data, {
       headers: {
         'content-type': 'application/x-www-form-urlencoded',
-      }
+      },
     });
   }
 
@@ -27,10 +27,10 @@ class Api {
     data.append('priority', priority);
     data.append('details', details);
 
-    axios.post('/thunder/create', data, {
+    await axios.post('/thunder/create', data, {
       headers: {
         'content-type': 'application/x-www-form-urlencoded',
-      }
+      },
     });
   }
 }

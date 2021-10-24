@@ -10,16 +10,31 @@ const domInterceptor = require('./utils/interceptors/dom');
 const requestInterceptor = require('./utils/interceptors/request');
 
 let projectKey = '';
+let isLoading = true;
+let isAPIError = false;
 
-window.onload = () => {
+window.onload = async () => {
   const domain = window.location.host;
 
   if (!projectKey) {
-    throw 'No project key';
+    return;
   }
 
-  const api = new Api(projectKey);
-  api.registerKey(domain);
+
+  let api;
+  isLoading = true;
+
+  try {
+    api = new Api(projectKey);
+    await api.registerKey(domain);
+  } catch (e) {
+    isAPIError = true;
+    isLoading = false;
+    return;
+  }
+
+  isAPIError = false;
+  isLoading = false;
 
   // domLogger.enableLogger((key, event) => {
   //   console.log(key, event);
@@ -95,28 +110,12 @@ window.onload = () => {
   );
 
   requestInterceptor.interceptRequest(
-    function (data) {
-      const body = data[0].body;
-      if (Sensitive.checkJSON(body)) {
-        // console.log('sensitive detected');
-
-        api.createThunder(
-          'Sensitive Payload',
-          window.location.href,
-          '2',
-          JSON.stringify({
-            description: `When you send sensitive data as request payload, It's triggering. for example, send password via non-SSL`,
-            suggestion: `Sensitive information must be encrypted during transmission over networks that are easily accessed by malicious individuals. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targets of malicious individuals who exploit these vulnerabilities to gain privileged access to cardholder data environments`,
-            reference: 'https://developer.mastercard.com/platform/documentation/security-and-authentication/securing-sensitive-data-using-payload-encryption/',
-          }),
-        );
+    function (body) {
+      if (!body) {
+        // NOTE: req body unavailable case
+        return;
       }
-    }
-  );
 
-  requestInterceptor.interceptResponse(
-    function (data) {
-      const body = data .body;
       if (Sensitive.checkJSON(body)) {
         // console.log('sensitive detected');
 
@@ -137,13 +136,31 @@ window.onload = () => {
 
 
 const protect = ({ key }) => {
-  console.log('start protect with cumulus');
+  if (!key) {
+    console.warn(`[cumulus] can't find project key!`);
+    return;
+  }
+
   projectKey = key;
 };
 
 const captureMessage = (msg) => {
-  // TODO caputre API -> to dashboard
-  console.log(msg);
+  if (!projectKey) {
+    console.error(`[cumulus] couldn't start - please register projectKey with call protect function.`);
+    return;
+  }
+
+  if (isLoading) {
+    console.warn(`[cumulus] too fast call - checking project key, please call captureMessage at little later moment.`);
+    return;
+  }
+
+  if (isAPIError) {
+    console.error(`[cumulus] couldn't start - please check your projectKey is valid.`);
+    return;
+  }
+  
+  console.log(`[cumulus] ${msg}`);
 };
 
 module.exports = {

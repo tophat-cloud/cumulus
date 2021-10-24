@@ -56,12 +56,58 @@ function interceptNetworkRequests(ee) {
 module.exports = {
   interceptRequest: (callback) => {
     interceptNetworkRequests({
-      onFetch: callback,
-    });
-  },
-  interceptResponse: (callback) => {
-    interceptNetworkRequests({
-      onFetch: callback,
+      onFetch: (data) => {
+        // for req of fetch API
+        try {
+          const payload = JSON.parse(data[1].body);
+          callback(payload);
+        } catch (e) {
+          // TODO raise error to maintainer
+        }
+      },
+      onFetchResponse: async (data) => {
+        // for req of fetch API
+        try {
+          const clone = data.clone();
+          const { value } = await clone.body.getReader().read();
+          const payload = String.fromCharCode.apply(null, value);
+  
+          callback(payload);
+        } catch (e) {
+          // TODO raise error to maintainer
+        }
+      },
+      onSend: (_, data) => {
+        // for req of axios API
+        try {
+          const payload = JSON.parse(data[0]);
+          callback(payload);
+        } catch (e) {
+          // TODO raise error to maintainer
+        }
+      },
+      onOpen: async (self) => {
+        // for res of axios API
+        try {
+          const promise = new Promise((resolve, reject) => {
+            const timer = setTimeout(() => {
+              reject();
+            }, 3000);
+
+            self.addEventListener('load', function() {
+              clearTimeout(timer);
+
+              const response = JSON.parse(this.responseText);
+              resolve(response);
+            });
+          });
+
+          const payload = await promise();
+          callback(payload);
+        } catch (e) {
+          // TODO raise error to maintainer
+        }
+      },
     });
   },
 };

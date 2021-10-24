@@ -9,7 +9,11 @@ module.exports = {
         }
 
         debounce = setTimeout(() => {
-          callback(e);
+          try {
+            callback(e);
+          } catch (err) {
+            // TODO raise error to maintainer
+          }
         }, 500);
       });
     });
@@ -21,7 +25,11 @@ module.exports = {
         }
 
         debounce = setTimeout(() => {
-          callback(e);
+          try {
+            callback(e);
+          } catch (err) {
+            // TODO raise error to maintainer
+          }
         }, 500);
       });
     });
@@ -29,7 +37,11 @@ module.exports = {
   interceptFileEvent: (callback) => {
     document.querySelectorAll('input[type="file"]').forEach(input => {
       input.addEventListener('change', function (e) {
-        callback(e);
+        try {
+          callback(e);
+        } catch (err) {
+          // TODO raise error to maintainer
+        }
       });
     });
   },

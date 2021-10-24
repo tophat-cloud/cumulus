@@ -10,16 +10,24 @@ const domInterceptor = require('./utils/interceptors/dom');
 const requestInterceptor = require('./utils/interceptors/request');
 
 let projectKey = '';
+let isAPIError = false;
 
-window.onload = () => {
+window.onload = async () => {
   const domain = window.location.host;
 
   if (!projectKey) {
     return;
   }
 
-  const api = new Api(projectKey);
-  api.registerKey(domain);
+  try {
+    const api = new Api(projectKey);
+    await api.registerKey(domain);
+  } catch (e) {
+    isAPIError = true;
+    return;
+  }
+
+  isAPIError = false;
 
   // domLogger.enableLogger((key, event) => {
   //   console.log(key, event);

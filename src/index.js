@@ -15,7 +15,7 @@ window.onload = () => {
   const domain = window.location.host;
 
   if (!projectKey) {
-    throw 'No project key';
+    return;
   }
 
   const api = new Api(projectKey);
@@ -137,13 +137,21 @@ window.onload = () => {
 
 
 const protect = ({ key }) => {
-  console.log('start protect with cumulus');
+  if (!projectKey) {
+    console.warn(`[cumulus] can't find project key!`);
+    return;
+  }
+
   projectKey = key;
 };
 
 const captureMessage = (msg) => {
-  // TODO caputre API -> to dashboard
-  console.log(msg);
+  if (!projectKey) {
+    console.error(`[cumulus] couldn't start - please register projectKey with call protect function.`);
+    return;
+  }
+  
+  console.log(`[cumulus] ${msg}`);
 };
 
 module.exports = {

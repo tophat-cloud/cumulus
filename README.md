@@ -11,7 +11,7 @@
 
 ![Build & Test](https://github.com/tophat-cloud/cumulus/actions/workflows/main.yml/badge.svg)
 [![codecov](https://codecov.io/gh/tophat-cloud/cumulus/branch/main/graph/badge.svg?token=HDT8UJHMNN)](https://codecov.io/gh/tophat-cloud/cumulus)
-[![npm version](https://img.shields.io/badge/npm-0.0.1-orange)](https://github.com/tophat-cloud/cumulus/releases/tag/v0.0.1)
+[![npm version](https://img.shields.io/badge/npm-0.0.2-orange)](https://github.com/tophat-cloud/cumulus/releases/tag/v0.0.2)
 [![Discord](https://img.shields.io/discord/898906919878668299)](https://discord.gg/BH7h6F2C7N)
 
 
@@ -30,8 +30,8 @@ in realtime. The issues will be reported on web dashboard. It's very simple and 
 # Key features
 Just install SDK to web front, can be found security weakness on service
 
-- SDK detect weakness from Inner Layer, dinamically (ex_ DOM Event, XHR Request)
-- Scanner detect weakness from Out Layer, statically (ex_ Crawl of web resources and analysis that)
+- SDK detect weakness from Inner Layer, dynamically (ex_ DOM Event, XHR Request)
+- Scanner detect weakness from Out Layer, statically (ex_ Web crawling based analysis)
 
 
 | Name | Origin | Description |

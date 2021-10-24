@@ -19,8 +19,9 @@ window.onload = async () => {
     return;
   }
 
+  let api;
   try {
-    const api = new Api(projectKey);
+    api = new Api(projectKey);
     await api.registerKey(domain);
   } catch (e) {
     isAPIError = true;

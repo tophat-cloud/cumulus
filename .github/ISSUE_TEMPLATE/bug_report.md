@@ -9,7 +9,7 @@ assignees: ''
 
 <!-- Requirements: please go through this checklist before opening a new issue -->
 
-- [ ] Review the documentation: https://cumulus.tophat.cloud/dashboard/documents
+- [ ] Review the documentation: https://github.com/tophat-cloud/cumulus/wiki
 - [ ] Search for existing issues: https://github.com/tophat-cloud/cumulus/issues
 - [ ] Use the latest release: https://github.com/tophat-cloud/cumulus/releases
 - [ ] Provide a link to the affected event from your Cumulus account

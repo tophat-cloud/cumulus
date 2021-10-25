@@ -11,7 +11,8 @@
   "scripts": {
     "test": "jest ./test/*.js",
     "test-codecov": "jest --ci --coverage && codecov",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "webpack"
   },
   "browserslist": {
     "production": [
@@ -42,6 +43,8 @@
   "devDependencies": {
     "codecov": "^3.8.3",
     "eslint": "^8.0.0",
-    "jest": "^27.2.5"
+    "jest": "^27.2.5",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1"
   }
 }

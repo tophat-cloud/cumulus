@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./node_modules/cumulus/dist/cumulus.bundle.js"></script>
+    <script defer>
+        window.cumulus.protect({
+            key: 'S4RCQKVuVnFMJ8Db1Ol-2',
+        });
+        setTimeout(() => {
+            window.cumulus.captureMessage('Hello, world!');
+        }, 1000);
+    </script>
+</body>
+
+</html>

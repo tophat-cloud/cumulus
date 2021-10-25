@@ -1,0 +1,22 @@
+{
+    "name": "vanilla",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "lite-server"
+    },
+    "dependencies": {
+        "cumulus": "https://github.com/cumulus/cumulus",
+        "lite-server": "^2.6.1"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "eslint:recommended"
+        ],
+        "rules": {}
+    }
+}

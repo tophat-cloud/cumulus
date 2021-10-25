@@ -9,7 +9,7 @@
   "homepage": "https://cumulus.tophat.cloud",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest ./test/*.js",
+    "test": "jest test/*.js",
     "test-codecov": "jest --ci --coverage && codecov",
     "lint": "eslint ."
   },
